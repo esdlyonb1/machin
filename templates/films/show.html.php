@@ -1,7 +1,8 @@
-<?php foreach ($films as $film) : ?>
+
 
     <hr>
     <h2><?=$film->getTitle() ?></h2>
+    <h3>Auteur : <?= $film->getUser()->getUsername() ?></h3>
     <img width="50px" src="images/<?= $film->getImage() ?>" alt="">
 
     <p><strong><?= $film->getSynopsis() ?></strong></p>
@@ -9,4 +10,4 @@
     <hr>
 
 
-<?php endforeach; ?>
+

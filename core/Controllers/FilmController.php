@@ -53,6 +53,12 @@ class FilmController extends AbstractController
 
     public function create(){
 
+        if(!$this->getUser()){
+            return $this->redirect([
+                "info"=>"connecte toi d'abord"
+            ]);
+        }
+
         $title = null;
         $synopsis = null;
 
@@ -78,6 +84,7 @@ class FilmController extends AbstractController
             $film->setTitle($title);
             $film->setSynopsis($synopsis);
             $film->setImage($image->getName());
+            $film->setUser($this->getUser());
 
            $idFilm = $this->repository->insert($film);
 

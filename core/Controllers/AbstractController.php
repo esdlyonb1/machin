@@ -8,7 +8,7 @@ use Attributes\TargetEntity;
 use Attributes\TargetRepository;
 use Attributes\UsesEntity;
 
-class AbstractController
+abstract class AbstractController
 {
 
     protected $usesEntity = true;
@@ -68,5 +68,9 @@ class AbstractController
     }
     public function redirect(? array $params=null){
         return \App\Response::redirect($params);
+    }
+
+    public function getUser(){
+        return \App\Session::getUser();
     }
 }
