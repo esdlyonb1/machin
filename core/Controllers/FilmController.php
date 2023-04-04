@@ -13,6 +13,7 @@ class FilmController extends AbstractController
 {
 
 
+    #[Route(url:"/admin/nouveau", name:"accueil_admin")]
     public function index(){
 
         $films = $this->repository->findAll();
@@ -44,7 +45,8 @@ class FilmController extends AbstractController
         return $this->render("films/show", [
             "pageTitle"=> $film->getTitle(),
             "film"=>$film,
-            "avisArray"=>$avis
+            "avisArray"=>$avis,
+            "css"=>"film"
         ]);
 
 
@@ -125,9 +127,10 @@ class FilmController extends AbstractController
 
 
 
-    }
 
-    public function update(){}
+
+
+   }
 
 
 }
