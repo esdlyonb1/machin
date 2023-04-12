@@ -27,7 +27,9 @@
                     <?php }else { ?>
 
                         <a class="nav-link active" href="?type=user&action=register">sign up</a>
-                        <a class="nav-link active" href="?type=user&action=signin">sign in</a>
+                        <a class="nav-link active" href="?type=user&action=signin">
+                            sign in
+                            </a>
 
                     <?php } ?>
                 </li>

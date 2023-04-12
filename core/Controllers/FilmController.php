@@ -13,7 +13,6 @@ class FilmController extends AbstractController
 {
 
 
-    #[Route(url:"/admin/nouveau", name:"accueil_admin")]
     public function index(){
 
         $films = $this->repository->findAll();
